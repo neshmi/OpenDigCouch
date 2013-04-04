@@ -1,0 +1,65 @@
+<div class="span12">
+  <div class="row-float">
+    <div class="span12">
+      <h1 data-bind="locus_param"></h1>
+    </div>
+    <hr>
+  </div>
+
+  <div class="row-float">
+    
+    <div class="span12">
+      <h3>Description</h3>
+      <div id="description-data">
+      yada yada yada
+      </div>
+    </div>
+
+    <div class="span12">
+      <h3>Levels</h3>
+      <hr>
+      <table class="table">
+        <thead>
+          <th>Location</th>
+          <th>Top Level</th>
+          <th>Bottom Level</th>
+          <th>Method (top)</th>
+          <th>Method (bottom)</th>
+          <th>Legacy? (top)</th>
+          <th>Legacy? (bottom)</th>
+        </thead>
+        <tbody>
+          <tr data-foreach-level="locus.levels">
+            <td data-bind="level.location"></td>
+            <td data-bind="level.top_level"></td>
+            <td data-bind="level.bottom_level"></td>
+            <td data-bind="level.method_top"></td>
+            <td data-bind="level.method_bottom"></td>
+            <td data-bind="level.top_is_legacy"></td>
+            <td data-bind="level.bottom_is_legacy"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row-float">
+    <div class="span12">
+      <h3>Stratigraphy</h3>
+      <hr>
+      <div class="span11 offset1" data-foreach-stratigraphy="locus.stratigraphies">
+        <span data-bind="stratigraphy.is_related"></span> <span data-bind="stratigraphy.related"></span> <a data-route="stratigraphy.related_locus" data-bind="text: stratigraphy.related_locus"></a>
+      </div>
+    </div>
+  </div>
+  <div class="row-float">
+    <div class="span12">
+      <h3>Photos</h3>
+      <hr>
+      <div class="span11 offset1" data-foreach-photo="locus.photos">
+        <span data-bind="photo.subject"></span>: <span data-bind="photo.number"></span> taken on: <span data-bind="photo.date"></span>
+      </div>
+    </div>
+  </div>
+
+
+</div>

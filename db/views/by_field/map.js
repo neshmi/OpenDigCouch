@@ -1,0 +1,1 @@
+function(doc){emit([doc.field, doc.square, '/squares/' + doc.square], doc.field);};

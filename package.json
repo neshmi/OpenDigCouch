@@ -1,0 +1,19 @@
+{
+  "author": "Matthew Vincent <matt@averails.com>",
+  "name": "OpenDig",
+  "description": "A new and exciting application using Batman",
+  "version": "0.0.1",
+  "main": "build/app.js",
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {
+    "batman": "*"
+  },
+  "devDependencies": {},
+  "batman": {
+    "appName": "OpenDig",
+    "build": true,
+    "buildDir": "./build"
+  }
+}

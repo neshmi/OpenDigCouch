@@ -1,0 +1,1 @@
+function(doc){if (doc.field) emit([doc.field, '/fields/' + doc.field],doc.field);};
