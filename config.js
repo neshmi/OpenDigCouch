@@ -18,7 +18,9 @@
     "Jimfile": false,
     "hooks": false,
     "build": false,
-    "*.coffee": false
+    "*.coffee": false,
+    "Gemfile": false,
+    "Gemfile.lock": false
   },
   "plugins": [
     "coffeescript"
