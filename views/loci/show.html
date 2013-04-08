@@ -63,6 +63,48 @@
   </div>
   <div class="row-float">
     <div class="span12">
+      <h3>Pails</h3>
+      <hr>
+      <table class="table">
+        <thead>
+          <th>Date</th>
+          <th>Pail</th>
+          <th>Baskets</th>
+          <th>Published</th>
+          <th>Diagnostics</th>
+          <th>Total Count</th>
+          <th>Location</th>
+          <th>Comments</th>
+        </thead>
+        <tbody data-foreach-pail="locus.pails">
+          <tr>
+            <td data-bind="pail.pail_date"></td>
+            <td data-bind="pail.pail_number"></td>
+            <td data-bind="pail.baskets"></td>
+            <td data-bind="pail.publish"></td>
+            <td data-bind="pail.diagnostic_count"></td>
+            <td data-bind="pail.total_count"></td>
+            <td data-bind="pail.pottery_location"></td>
+            <td data-bind="pail.pottery_comments"></td>
+          </tr>
+          <tr>
+            <td colspan="8">
+              <div>
+              <h4>Readings</h4>
+                <dl class='dl-horizontal' data-foreach-reading="pail.readings">
+                  <dt class='text-success'>Count</dt><dd data-bind="reading.count"></dd>
+                  <dt class='text-success'>Period</dt><dd data-bind="reading.age"></dd>
+                  <dt class='text-success'>Form</dt><dd data-bind="reading.pot_form"></dd>
+                </dl>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row-float">
+    <div class="span12">
       <h3>Photos</h3>
       <hr>
       <div class="span11 offset1" data-foreach-photo="locus.photos">

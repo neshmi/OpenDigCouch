@@ -13,7 +13,7 @@
     }
 
     if (__indexOf.call(document.location.pathname.split("/"), "_design") >= 0) {
-      Batman.config.viewPrefix = "" + (document.location.pathname.split('/')[1]) + "/_design/umayri_couch/views";
+      Batman.config.viewPrefix = "" + (document.location.pathname.split('/')[1]) + "/_design/opendig_couch/views";
     }
 
     return ApplicationController;
