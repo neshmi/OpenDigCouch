@@ -1,5 +1,5 @@
 {
-  "id": "umayri_couch",
+  "id": "opendig_couch",
   "mapDirectories": {
     "config.js": "",
     "open_dig.js": "_attachments/open_dig.js",
