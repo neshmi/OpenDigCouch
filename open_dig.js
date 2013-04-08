@@ -11,8 +11,6 @@
       return _ref;
     }
 
-    OpenDig.set('mission', 'fight crime');
-
     OpenDig.root('fields#index');
 
     OpenDig.resources('fields');

@@ -14,19 +14,10 @@
     LociController.prototype.routingKey = 'loci';
 
     LociController.prototype.show = function(params) {
-      var description_json, response;
+      var response;
 
       response = null;
-      description_json = null;
       this.locus_param = params.locus_id;
-      $.ajax({
-        type: "GET",
-        async: false,
-        url: "resources/descriptions.json",
-        success: function(data, textStatus, jqHXR) {
-          return description_json = data;
-        }
-      });
       $.ajax({
         type: "GET",
         async: false,
@@ -35,8 +26,8 @@
           return response = JSON.parse(data).rows[0];
         }
       });
-      console.log(description_json.description_types[response.value.locus_type]);
       this.locus = response.value;
+      this.set('locusData', this.locus);
       return this.render({
         source: "loci/show.html?" + ((new Date).getTime())
       });

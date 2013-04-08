@@ -7,11 +7,20 @@
   </div>
 
   <div class="row-float">
+    <h3>General Information</h3>
+    <div id="description-general-container">
+      <dl class='dl-horizontal span11 offset1' data-view="GeneralLocusView">
+        
+      </dl>
+    </div>
+  </div>
+
+  <div class="row-float">
     
     <div class="span12">
       <h3>Description</h3>
-      <div id="description-data">
-      yada yada yada
+
+      <div id="description-data-container" data-view="DescriptionView">
       </div>
     </div>
 
@@ -47,7 +56,8 @@
       <h3>Stratigraphy</h3>
       <hr>
       <div class="span11 offset1" data-foreach-stratigraphy="locus.stratigraphies">
-        <span data-bind="stratigraphy.is_related"></span> <span data-bind="stratigraphy.related"></span> <a data-route="stratigraphy.related_locus" data-bind="text: stratigraphy.related_locus"></a>
+        <span data-bind="stratigraphy.is_related"></span> <span data-bind="stratigraphy.related"></span> 
+        <a data-event-click="controllers.lociController.show | withArguments stratigraphy.related_locus" data-bind="stratigraphy.related_locus"></a>
       </div>
     </div>
   </div>

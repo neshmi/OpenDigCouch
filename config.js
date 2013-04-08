@@ -14,8 +14,11 @@
     "views": "_attachments/views",
     "resources/descriptions.json": "_attachments/descriptions.json",
     "db": "",
+    "*.dump": false,
     "Jimfile": false,
-    "hooks": false
+    "hooks": false,
+    "build": false,
+    "*.coffee": false
   },
   "plugins": [
     "coffeescript"

@@ -1,5 +1,4 @@
 class OpenDig extends Batman.App
-  @set 'mission', 'fight crime'
   # Set the root route to ExamplesController#index.
   @root 'fields#index'
   @resources 'fields'

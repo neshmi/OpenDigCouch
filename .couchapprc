@@ -4,7 +4,7 @@
       "db": "http://localhost:5984/umayri_couch"
     },
     "production": {
-      "db": "http://localhost:5984/umayri_couch"
+      "db": "http://opendig.iriscouch.com/umayri"
     }
   }
 }

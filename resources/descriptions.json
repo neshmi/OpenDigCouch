@@ -1,9 +1,23 @@
 {   "description_types": {
-      "Architecture": "ArchitectureDescription",
-      "Earth": "EarthDescription",
-      "Installation": "InstallationDescription"
+      "Architecture": "achitecture_description",
+      "Earth": "earth_description",
+      "Installation": "installation_description"
     },
-    "ArchitectureDescription": [
+    "general_information": [
+      {"key": "locus_type", "label": "Locus Type"},
+      {"key": "supervisor", "label": "Supervisor"},
+      {"key": "designation", "label": "Designation"},
+      {"key": "reason", "label": "Reason"},
+      {"key": "top_separation", "label": "Top Separation"},
+      {"key": "bottom_separation", "label": "Bototm Separation"},
+      {"key": "start_date", "label": "Start Date"},
+      {"key": "end_date", "label": "End Date"},
+      {"key": "balk", "label": "Balk"},
+      {"key": "clean_locus", "label": "Clean Locus"}
+    ],
+    "data_items": [
+    ],
+    "achitecture_description": [
         [
             "Material", 
             [
@@ -801,7 +815,7 @@
             ]
         ]
     ], 
-    "EarthDescription": [
+    "earth_description": [
         [
             "Color", 
             [
@@ -1571,7 +1585,7 @@
             ]
         ]
     ], 
-    "InstallationDescription": [
+    "installation_description": [
         [
             "Type", 
             [
