@@ -9,7 +9,7 @@
   <div class="row-float">
     <h3>General Information</h3>
     <div id="description-general-container">
-      <dl class='dl-horizontal span11 offset1' data-view="GeneralLocusView">
+      <dl class='dl-horizontal span11 offset1' data-view="GeneralLocusView" data-view-field="locus.field" data-view-square="locus.square" data-view-code="locus.code">
         
       </dl>
     </div>
@@ -20,7 +20,7 @@
     <div class="span12">
       <h3>Description</h3>
 
-      <div id="description-data-container" data-view="DescriptionView">
+      <div id="description-data-container" data-view="DescriptionView" data-view-field="locus.field" data-view-square="locus.square" data-view-code="locus.code">
       </div>
     </div>
 
@@ -51,6 +51,27 @@
       </table>
     </div>
   </div>
+
+  <div class="row-float">
+    <div class="span12">
+      <h3>Photos</h3>
+      <hr>
+      <div class="span10 offset1 row-float">
+        <div data-foreach-photo="locus.photos">
+          <div class="photo-container row-float pull-left" data-view="PhotoView" data-photo-number="photo.number" data-view-subject="photo.subject" data-view-date="photo.date">
+          <div class="photo-loading">
+            <img src="/img/gear_loading.gif"></img>
+          </div>
+          <div class="photo-information">
+              <strong><p data-bind="photo.number"></p></strong>
+              <p data-bind="photo.subject"></p>
+              <p class="muted" data-bind="photo.date"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="row-float">
     <div class="span12">
       <h3>Stratigraphy</h3>
@@ -103,15 +124,32 @@
       </table>
     </div>
   </div>
+
   <div class="row-float">
     <div class="span12">
-      <h3>Photos</h3>
+      <h3>Objects and Artifacts</h3>
       <hr>
-      <div class="span11 offset1" data-foreach-photo="locus.photos">
-        <span data-bind="photo.subject"></span>: <span data-bind="photo.number"></span> taken on: <span data-bind="photo.date"></span>
+
+      <!-- Start data -->
+      <div class="row" data-foreach-artifact="locus.artifacts">
+        <!-- Left column -->
+        <div class="span1">
+          <div class="row">
+            <h4 data-bind="artifact.registration"></h4>
+          </div>
+          <div class="row">
+            <span class="label" data-bind="artifact.artifact_type"></span>
+          </div>
+        </div>
+        <!-- Right Column -->
+        <div class="span10 offset1">
+          <div class="row">
+            <span data-bind="artifact.comments"></span>
+          </div>
+        </div>
       </div>
+      <!-- End Data -->
     </div>
   </div>
-
 
 </div>

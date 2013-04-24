@@ -1,5 +1,5 @@
 {   "description_types": {
-      "Architecture": "achitecture_description",
+      "Architecture": "architecture_description",
       "Earth": "earth_description",
       "Installation": "installation_description"
     },

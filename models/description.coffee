@@ -9,7 +9,6 @@ class OpenDig.Description extends Batman.Model
       url: "resources/descriptions.json"
       datatype: 'json'
       async: false
-      cache: false
       success: (data, textStatus, jqHXR) ->
         response = data
     return response

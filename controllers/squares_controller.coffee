@@ -6,7 +6,7 @@ class OpenDig.SquaresController extends OpenDig.ApplicationController
     @square = params.id
     @square_label = "Square #{@square} - Loci"
     startkey = 'startkey=["' + @square + '"]'
-    endkey = 'endkey=["' + @square + 'ZZZZZZ' + '"]'
+    endkey = 'endkey=["' + @square + "\\ufff0" + '"]'
     $.ajax
       type: "GET",
       async: false,

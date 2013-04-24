@@ -30,7 +30,7 @@
         for (_i = 0, _len = _ref2.length; _i < _len; _i++) {
           item = _ref2[_i];
           item_value = locus[descriptionType][item.key];
-          if (item_value) {
+          if (item_value != null) {
             list_item = $("<dt class='text-success'>" + item.label + "</dt><dd>" + item_value + "</dd>");
             list.append(list_item);
             post_div = true;

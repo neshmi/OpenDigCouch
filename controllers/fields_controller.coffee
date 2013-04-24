@@ -18,7 +18,7 @@ class OpenDig.FieldsController extends OpenDig.ApplicationController
     @field = params.id
     @field_label = "Field #{@field} - Squares"
     startkey = 'startkey=["' + @field + '"]'
-    endkey = 'endkey=["' + @field + 'ZZZZZZ' + '"]'
+    endkey = 'endkey=["' + @field + "\\ufff0" + '"]'
     $.ajax
       type: "GET",
       async: false,

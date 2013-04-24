@@ -21,6 +21,7 @@
       $.ajax({
         type: "GET",
         async: false,
+        cache: false,
         url: "_view/get_locus?key=\"" + this.locus_param + "\"",
         success: function(data, textStatus, jqHXR) {
           return response = JSON.parse(data).rows[0];

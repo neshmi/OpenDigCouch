@@ -11,6 +11,10 @@
       return _ref;
     }
 
+    OpenDig.set('media_server', 'http://media.opendig.org');
+
+    OpenDig.set('site', 'umayri');
+
     OpenDig.root('fields#index');
 
     OpenDig.resources('fields');

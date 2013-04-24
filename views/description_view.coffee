@@ -13,7 +13,7 @@ class OpenDig.DescriptionView extends Batman.View
       div.append(list)
       for item in value[1]
         item_value = locus[descriptionType][item.key]
-        if item_value
+        if item_value?
           list_item = $("<dt class='text-success'>#{item.label}</dt><dd>#{item_value}</dd>")
           list.append(list_item)
           post_div = true

@@ -20,7 +20,7 @@
       this.square = params.id;
       this.square_label = "Square " + this.square + " - Loci";
       startkey = 'startkey=["' + this.square + '"]';
-      endkey = 'endkey=["' + this.square + 'ZZZZZZ' + '"]';
+      endkey = 'endkey=["' + this.square + "\\ufff0" + '"]';
       $.ajax({
         type: "GET",
         async: false,

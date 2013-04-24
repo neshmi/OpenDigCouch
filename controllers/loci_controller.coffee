@@ -8,6 +8,7 @@ class OpenDig.LociController extends OpenDig.ApplicationController
     $.ajax
       type: "GET",
       async: false,
+      cache: false,
       url: "_view/get_locus?key=\"#{@locus_param}\""
       success: (data, textStatus, jqHXR) ->
         response = JSON.parse(data).rows[0]

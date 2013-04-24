@@ -24,7 +24,6 @@
         url: "resources/descriptions.json",
         datatype: 'json',
         async: false,
-        cache: false,
         success: function(data, textStatus, jqHXR) {
           return response = data;
         }

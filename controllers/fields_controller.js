@@ -37,7 +37,7 @@
       this.field = params.id;
       this.field_label = "Field " + this.field + " - Squares";
       startkey = 'startkey=["' + this.field + '"]';
-      endkey = 'endkey=["' + this.field + 'ZZZZZZ' + '"]';
+      endkey = 'endkey=["' + this.field + "\\ufff0" + '"]';
       $.ajax({
         type: "GET",
         async: false,

@@ -1,4 +1,6 @@
 class OpenDig extends Batman.App
+  @set 'media_server', 'http://media.opendig.org'
+  @set 'site', 'umayri'
   # Set the root route to ExamplesController#index.
   @root 'fields#index'
   @resources 'fields'
