@@ -1,155 +1,157 @@
-<div class="span12">
-  <div class="row-float">
-    <div class="span12">
-      <h1 data-bind="locus_param"></h1>
+<div data-foreach-locus="locus_results">
+  <div class="span12">
+    <div class="row-float">
+      <div class="span12">
+        <h1 data-bind="locus_param"></h1>
+      </div>
+      <hr>
     </div>
-    <hr>
-  </div>
 
-  <div class="row-float">
-    <h3>General Information</h3>
-    <div id="description-general-container">
-      <dl class='dl-horizontal span11 offset1' data-view="GeneralLocusView" data-view-field="locus.field" data-view-square="locus.square" data-view-code="locus.code">
-        
-      </dl>
-    </div>
-  </div>
-
-  <div class="row-float">
-    
-    <div class="span12">
-      <h3>Description</h3>
-
-      <div id="description-data-container" data-view="DescriptionView" data-view-field="locus.field" data-view-square="locus.square" data-view-code="locus.code">
+    <div class="row-float">
+      <h3>General Information</h3>
+      <div id="description-general-container">
+        <dl class='dl-horizontal span11 offset1' data-view="GeneralLocusView" data-view-field="locus.value.field" data-view-square="locus.value.square" data-view-code="locus.value.code">
+          
+        </dl>
       </div>
     </div>
 
-    <div class="span12">
-      <h3>Levels</h3>
-      <hr>
-      <table class="table">
-        <thead>
-          <th>Location</th>
-          <th>Top Level</th>
-          <th>Bottom Level</th>
-          <th>Method (top)</th>
-          <th>Method (bottom)</th>
-          <th>Legacy? (top)</th>
-          <th>Legacy? (bottom)</th>
-        </thead>
-        <tbody>
-          <tr data-foreach-level="locus.levels">
-            <td data-bind="level.location"></td>
-            <td data-bind="level.top_level"></td>
-            <td data-bind="level.bottom_level"></td>
-            <td data-bind="level.method_top"></td>
-            <td data-bind="level.method_bottom"></td>
-            <td data-bind="level.top_is_legacy"></td>
-            <td data-bind="level.bottom_is_legacy"></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+    <div class="row-float">
+      
+      <div class="span12">
+        <h3>Description</h3>
 
-  <div class="row-float">
-    <div class="span12">
-      <h3>Photos</h3>
-      <hr>
-      <div class="span10 offset1 row-float">
-        <div data-foreach-photo="locus.photos">
-          <div class="photo-container row-float pull-left" data-view="PhotoView" data-photo-number="photo.number" data-view-subject="photo.subject" data-view-date="photo.date">
-          <div class="photo-loading">
-            <img src="/img/gear_loading.gif"></img>
-          </div>
-          <div class="photo-information">
-              <strong><p data-bind="photo.number"></p></strong>
-              <p data-bind="photo.subject"></p>
-              <p class="muted" data-bind="photo.date"></p>
+        <div id="description-data-container" data-view="DescriptionView" data-view-field="locus.value.field" data-view-square="locus.value.square" data-view-code="locus.value.code">
+        </div>
+      </div>
+
+      <div class="span12">
+        <h3>Levels</h3>
+        <hr>
+        <table class="table">
+          <thead>
+            <th>Location</th>
+            <th>Top Level</th>
+            <th>Bottom Level</th>
+            <th>Method (top)</th>
+            <th>Method (bottom)</th>
+            <th>Legacy? (top)</th>
+            <th>Legacy? (bottom)</th>
+          </thead>
+          <tbody>
+            <tr data-foreach-level="locus.value.levels">
+              <td data-bind="level.location"></td>
+              <td data-bind="level.top_level"></td>
+              <td data-bind="level.bottom_level"></td>
+              <td data-bind="level.method_top"></td>
+              <td data-bind="level.method_bottom"></td>
+              <td data-bind="level.top_is_legacy"></td>
+              <td data-bind="level.bottom_is_legacy"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="row-float">
+      <div class="span12">
+        <h3>Photos</h3>
+        <hr>
+        <div class="span10 offset1 row-float">
+          <div data-foreach-photo="locus.value.photos">
+            <div class="photo-container row-float pull-left" data-view="PhotoView" data-photo-number="photo.number" data-view-subject="photo.subject" data-view-date="photo.date">
+            <div class="photo-loading">
+              <img src="/img/gear_loading.gif"></img>
+            </div>
+            <div class="photo-information">
+                <strong><p data-bind="photo.number"></p></strong>
+                <p data-bind="photo.subject"></p>
+                <p class="muted" data-bind="photo.date"></p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="row-float">
-    <div class="span12">
-      <h3>Stratigraphy</h3>
-      <hr>
-      <div class="span11 offset1" data-foreach-stratigraphy="locus.stratigraphies">
-        <span data-bind="stratigraphy.is_related"></span> <span data-bind="stratigraphy.related"></span> 
-        <a data-event-click="controllers.lociController.show | withArguments stratigraphy.related_locus" data-bind="stratigraphy.related_locus"></a>
-      </div>
-    </div>
-  </div>
-  <div class="row-float">
-    <div class="span12">
-      <h3>Pails</h3>
-      <hr>
-      <table class="table">
-        <thead>
-          <th>Date</th>
-          <th>Pail</th>
-          <th>Baskets</th>
-          <th>Published</th>
-          <th>Diagnostics</th>
-          <th>Total Count</th>
-          <th>Location</th>
-          <th>Comments</th>
-        </thead>
-        <tbody data-foreach-pail="locus.pails">
-          <tr>
-            <td data-bind="pail.pail_date"></td>
-            <td data-bind="pail.pail_number"></td>
-            <td data-bind="pail.baskets"></td>
-            <td data-bind="pail.publish"></td>
-            <td data-bind="pail.diagnostic_count"></td>
-            <td data-bind="pail.total_count"></td>
-            <td data-bind="pail.pottery_location"></td>
-            <td data-bind="pail.pottery_comments"></td>
-          </tr>
-          <tr>
-            <td colspan="8">
-              <div>
-              <h4>Readings</h4>
-                <dl class='dl-horizontal' data-foreach-reading="pail.readings">
-                  <dt class='text-success'>Count</dt><dd data-bind="reading.count"></dd>
-                  <dt class='text-success'>Period</dt><dd data-bind="reading.age"></dd>
-                  <dt class='text-success'>Form</dt><dd data-bind="reading.pot_form"></dd>
-                </dl>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="row-float">
-    <div class="span12">
-      <h3>Objects and Artifacts</h3>
-      <hr>
-
-      <!-- Start data -->
-      <div class="row" data-foreach-artifact="locus.artifacts">
-        <!-- Left column -->
-        <div class="span1">
-          <div class="row">
-            <h4 data-bind="artifact.registration"></h4>
-          </div>
-          <div class="row">
-            <span class="label" data-bind="artifact.artifact_type"></span>
-          </div>
-        </div>
-        <!-- Right Column -->
-        <div class="span10 offset1">
-          <div class="row">
-            <span data-bind="artifact.comments"></span>
-          </div>
+    <div class="row-float">
+      <div class="span12">
+        <h3>Stratigraphy</h3>
+        <hr>
+        <div class="span11 offset1" data-foreach-stratigraphy="locus.value.stratigraphies">
+          <span data-bind="stratigraphy.is_related"></span> <span data-bind="stratigraphy.related"></span> 
+          <a data-event-click="controllers.lociController.show | withArguments stratigraphy.related_locus" data-bind="stratigraphy.related_locus"></a>
         </div>
       </div>
-      <!-- End Data -->
     </div>
-  </div>
+    <div class="row-float">
+      <div class="span12">
+        <h3>Pails</h3>
+        <hr>
+        <table class="table">
+          <thead>
+            <th>Date</th>
+            <th>Pail</th>
+            <th>Baskets</th>
+            <th>Published</th>
+            <th>Diagnostics</th>
+            <th>Total Count</th>
+            <th>Location</th>
+            <th>Comments</th>
+          </thead>
+          <tbody data-foreach-pail="locus.value.pails">
+            <tr>
+              <td data-bind="pail.pail_date"></td>
+              <td data-bind="pail.pail_number"></td>
+              <td data-bind="pail.baskets"></td>
+              <td data-bind="pail.publish"></td>
+              <td data-bind="pail.diagnostic_count"></td>
+              <td data-bind="pail.total_count"></td>
+              <td data-bind="pail.pottery_location"></td>
+              <td data-bind="pail.pottery_comments"></td>
+            </tr>
+            <tr>
+              <td colspan="8">
+                <div>
+                <h4>Readings</h4>
+                  <dl class='dl-horizontal' data-foreach-reading="pail.readings">
+                    <dt class='text-success'>Count</dt><dd data-bind="reading.count"></dd>
+                    <dt class='text-success'>Period</dt><dd data-bind="reading.age"></dd>
+                    <dt class='text-success'>Form</dt><dd data-bind="reading.pot_form"></dd>
+                  </dl>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
+    <div class="row-float">
+      <div class="span12">
+        <h3>Objects and Artifacts</h3>
+        <hr>
+
+        <!-- Start data -->
+        <div class="row" data-foreach-artifact="locus.value.artifacts">
+          <!-- Left column -->
+          <div class="span1">
+            <div class="row">
+              <h4 data-bind="artifact.registration"></h4>
+            </div>
+            <div class="row">
+              <span class="label" data-bind="artifact.artifact_type"></span>
+            </div>
+          </div>
+          <!-- Right Column -->
+          <div class="span10 offset1">
+            <div class="row">
+              <span data-bind="artifact.comments"></span>
+            </div>
+          </div>
+        </div>
+        <!-- End Data -->
+      </div>
+    </div>
+
+  </div>
 </div>

@@ -11,10 +11,6 @@
       return _ref;
     }
 
-    Description.prototype.myMethod = function() {
-      return "testing";
-    };
-
     Description.prototype.descriptionFile = function() {
       var response;
 

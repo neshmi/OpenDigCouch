@@ -7,7 +7,10 @@ class OpenDig extends Batman.App
   @resources 'squares'
   @route 'loci/:locus_id', 'loci#show'
   
+  Batman.DOM.Yield.clearAllStale = -> {}
+  # Batman.config.usePushState = yes
+  # Batman.config.pathPrefix = '/'
+
 # Make OpenDig available in the global namespace so it can be used
 # as a namespace and bound to in views.
 window.OpenDig = OpenDig
- 

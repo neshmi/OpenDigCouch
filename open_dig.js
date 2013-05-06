@@ -23,6 +23,10 @@
 
     OpenDig.route('loci/:locus_id', 'loci#show');
 
+    Batman.DOM.Yield.clearAllStale = function() {
+      return {};
+    };
+
     return OpenDig;
 
   })(Batman.App);

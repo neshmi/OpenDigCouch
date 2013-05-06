@@ -1,4 +1,16 @@
-{   "description_types": {
+{   
+    "config": {
+        "development": {
+            "media_server": "http://media.opendig.org"
+        },
+        "umayri": {
+            "media_server": "http://media.opendig.org"
+        },
+        "balua": {
+            "media_server": "http://media.opendig.org"
+        }
+    },
+    "description_types": {
       "Architecture": "architecture_description",
       "Earth": "earth_description",
       "Installation": "installation_description"

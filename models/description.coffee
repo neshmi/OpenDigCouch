@@ -1,7 +1,4 @@
 class OpenDig.Description extends Batman.Model
-  myMethod: ->
-    return "testing"
-
   descriptionFile: ->
     response = null
     $.ajax

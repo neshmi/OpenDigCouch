@@ -16,6 +16,7 @@
     LociController.prototype.show = function(params) {
       var response;
 
+      this.locus = null;
       response = null;
       this.locus_param = params.locus_id;
       $.ajax({
@@ -24,11 +25,11 @@
         cache: false,
         url: "_view/get_locus?key=\"" + this.locus_param + "\"",
         success: function(data, textStatus, jqHXR) {
-          return response = JSON.parse(data).rows[0];
+          return response = JSON.parse(data).rows;
         }
       });
-      this.locus = response.value;
-      this.set('locusData', this.locus);
+      this.locus_results = response;
+      this.set('locusData', this.locus_results[0].value);
       return this.render({
         source: "loci/show.html?" + ((new Date).getTime())
       });
