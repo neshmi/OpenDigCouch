@@ -79,7 +79,7 @@
         <hr>
         <div class="span11 offset1" data-foreach-stratigraphy="locus.value.stratigraphies">
           <span data-bind="stratigraphy.is_related"></span> <span data-bind="stratigraphy.related"></span> 
-          <a data-event-click="controllers.lociController.show | withArguments stratigraphy.related_locus" data-bind="stratigraphy.related_locus"></a>
+          <a data-bind-href="stratigraphy.related_locus | prepend '#!/loci/'" data-bind="stratigraphy.related_locus"></a>
         </div>
       </div>
     </div>
